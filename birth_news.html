@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مهم‌ترین خبر امروز ❤️</title>
+    <style>
+        @font-face {
+            font-family: 'samim';
+            src: url('font/Samim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'samim';
+            src: url('font/Samim-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: "Samim", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #3B82F6 , #60A5FA ,#A78BFA , #FBCFE8 );
+            /* background: linear-gradient(135deg, #00ffac 0%, #f00 100%); */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            direction: rtl;
+        }
+
+        .card {
+            background: #ffffff2b;
+            box-shadow: 0px 0px 20px rgba(88, 88, 88, 0.834);
+            max-width: 650px;
+            width: 100%;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(57, 57, 57, 0.52);
+            border: 1px solid #f0e6e6;
+            line-height: 2;
+            text-align: center;
+        }
+
+        /* استایل اولیه تمام خطوط: پنهان و کمی پایین‌تر */
+        .step {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+            margin: 14px 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        /* کلاسی که JS اضافه می‌کنه تا خط ظاهر بشه */
+        .step.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* تیترها و جملات خاص */
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            font-size: 1.45rem;
+            font-weight: bold;
+            color: #8b1e1e; /* همون رنگ قرمز جذاب خودت */
+            margin: 20px 0;
+        }
+
+        .final-wish {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #d63031;
+            margin-top: 25px;
+        }
+        #maniimg{
+            height: 10vh;
+            width: 10vh;
+        }
+        #film{
+            width: 50vh;
+            height: 50vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="step title">صبر کن... واقعا فکر کردی این کارو من نمیتونستم انجام بدم؟ :)</div>
+        <div class="step">بیخیال ;)</div>
+        <!--<div class="step">قبل از اینکه بقیه‌ی خبرها رو بخونی، یه خبر مهم‌تر هست...</div>-->
+        <div class="step highlight">گور بابای هیاهوی دنیا؛ مهم‌ترین اتفاق این روزا تولد توئه 💐🤍</div>
+        <div class="step">پول، سلامتی، موفقیت و کلی اتفاق خوب رو که همه آرزوشو برات دارن...</div>
+        <div class="step">و می‌دونم که یکی از لایق‌ترین‌هاش خودتی و امیدوارم همه‌شون رو داشته باشی.</div>
+        <div class="step">اما من علاوه بر اینا یه آرزوی دیگه دارم:</div>
+        <div class="step" style="font-weight: bold; color: #2d3436;">امیدوارم امسال بیشتر بخندی :)</div>
+        <div class="step">واقعی‌تر، بلندتر و از ته دل‌تر...</div>
+        <div class="step final-wish">💐تولدت مبارک😉</div>
+        <!-- <video id="film" controls poster="../img/photo_2025-03-27_01-04-43.jpg" src="../img/2769206-11-FromS01E03-480.mp4"></video> -->
+    </div>
+
+    <script>
+        // انتخاب تمام بخش‌هایی که باید به نوبت نمایش داده بشن
+        const steps = document.querySelectorAll('.step');
+        
+        // فاصله زمانی بین نمایش هر جمله به میلی‌ثانیه (۲.۵ ثانیه)
+        const delayBetweenSteps = 2000; 
+
+        steps.forEach((step, index) => {
+            setTimeout(() => {
+                step.classList.add('show');
+                // اگه صفحه توی گوشی بلند شد، اتوماتیک اسکرول کنه پایین تا آخرین خط همیشه تو دید باشه
+                step.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, index * delayBetweenSteps);
+        });
+    </script>
+</body>
+</html>
